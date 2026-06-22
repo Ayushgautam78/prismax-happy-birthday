@@ -223,7 +223,7 @@
           const opacity = Math.max(0.3, 1 - Math.abs(distance) / (this.el.offsetWidth * 0.8));
 
           slide.style.transform = `rotate(${rotation}deg) translateY(${translateY}px)`;
-          slide.style.opacity = opacity;
+          slide.style.opacity = 1; // clearly visible, no dull effect
         });
       }
     }
