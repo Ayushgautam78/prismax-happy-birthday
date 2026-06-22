@@ -9,7 +9,7 @@
 
   const state = {
     initialized: false,
-    muted: true,
+    muted: false,
     audioCtx: null,
   };
 
