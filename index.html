@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>🎉 Happy 1st Birthday PrismaX!</title>
+  <meta name="description" content="Celebrating PrismaX's 1st Anniversary — An interactive birthday journey full of memories, achievements, and heartfelt wishes.">
+  <meta name="theme-color" content="#FFFEF5">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/main.css?v=3">
+  <link rel="stylesheet" href="css/sections.css?v=3">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PRELOADER — Cinematic Loading Sequence                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div id="preloader" class="preloader">
+    <div class="preloader__scene">
+      <div class="preloader__robot">
+        <svg viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg" class="preloader__robot-svg">
+          <!-- Antenna -->
+          <g class="robot-antenna">
+            <line x1="60" y1="15" x2="60" y2="35" stroke="#FFE135" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="60" cy="10" r="6" fill="#FF8FAB" class="antenna-bulb"/>
+          </g>
+          <!-- Head -->
+          <rect x="30" y="35" width="60" height="48" rx="14" fill="#89CFF0" class="robot-head"/>
+          <!-- Eyes -->
+          <g class="robot-eyes">
+            <circle cx="45" cy="55" r="7" fill="white"/>
+            <circle cx="45" cy="55" r="3.5" fill="#2c2c2c" class="robot-pupil-l"/>
+            <circle cx="75" cy="55" r="7" fill="white"/>
+            <circle cx="75" cy="55" r="3.5" fill="#2c2c2c" class="robot-pupil-r"/>
+          </g>
+          <!-- Smile -->
+          <path d="M 47 68 Q 60 78 73 68" fill="none" stroke="#2c2c2c" stroke-width="2.5" stroke-linecap="round" class="robot-smile"/>
+          <!-- Body -->
+          <rect x="25" y="87" width="70" height="45" rx="12" fill="#5DD39E" class="robot-body"/>
+          <!-- Heart on body -->
+          <text x="60" y="115" text-anchor="middle" font-size="18">❤️</text>
+          <!-- Arms -->
+          <g class="robot-arm-l">
+            <rect x="8" y="92" width="20" height="12" rx="6" fill="#89CFF0"/>
+          </g>
+          <g class="robot-arm-r">
+            <rect x="92" y="92" width="20" height="12" rx="6" fill="#89CFF0"/>
+            <!-- Balloon string -->
+            <line x1="108" y1="86" x2="108" y2="55" stroke="#FF8FAB" stroke-width="1.5"/>
+            <circle cx="108" cy="48" r="10" fill="#FF8FAB" opacity="0.9" class="robot-balloon"/>
+          </g>
+          <!-- Legs -->
+          <rect x="38" y="132" width="14" height="16" rx="6" fill="#FFE135"/>
+          <rect x="68" y="132" width="14" height="16" rx="6" fill="#FFE135"/>
+        </svg>
+      </div>
+
+      <div class="preloader__content">
+        <div class="preloader__title">Preparing Celebration</div>
+        <div class="preloader__dots">
+          <span class="preloader__dot"></span>
+          <span class="preloader__dot"></span>
+          <span class="preloader__dot"></span>
+        </div>
+        <div class="preloader__progress">
+          <svg viewBox="0 0 120 120" class="preloader__ring">
+            <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="4"/>
+            <circle cx="60" cy="60" r="54" fill="none" stroke="#FFE135" stroke-width="4"
+                    stroke-dasharray="339.292" stroke-dashoffset="339.292"
+                    stroke-linecap="round" class="preloader__ring-fill" id="preloader-ring"/>
+          </svg>
+          <span class="preloader__percent" id="preloader-percent">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- NAVIGATION — Minimal Floating Button                    -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <nav id="main-nav" class="nav" visible="true">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <img src="assets/logo.png" alt="PrismaX Logo" class="nav__logo-img">
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="#hero" class="nav__link active" data-section="hero">Home</a>
+        <a href="#about" class="nav__link" data-section="about">About</a>
+        <a href="#journey" class="nav__link" data-section="journey">Journey</a>
+        <a href="#learned" class="nav__link" data-section="learned">Learned</a>
+        <a href="#memories" class="nav__link" data-section="memories">Memories</a>
+        <a href="#family" class="nav__link" data-section="family">Family</a>
+        <a href="#special" class="nav__link" data-section="special">Special</a>
+        <a href="#groundbreaker" class="nav__link" data-section="groundbreaker">Achievement</a>
+        <a href="#wishes" class="nav__link" data-section="wishes">Wishes</a>
+      </div>
+      <button id="nav-toggle" class="nav__toggle" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SOUND TOGGLE                                            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <button id="sound-toggle" class="sound-toggle" aria-label="Toggle Sound" data-muted="true">
+    <span class="sound-toggle__icon sound-toggle__on">🔊</span>
+    <span class="sound-toggle__icon sound-toggle__off">🔇</span>
+  </button>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- MAIN CONTENT WRAPPER (z-index above footer)             -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <main id="main-content" class="main-content">
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 1: HERO — Happy Birthday PrismaX           -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="hero" class="section hero" mounted="false">
+      <div class="hero__bg">
+        <div class="hero__gradient"></div>
+        <div class="hero__particles" id="hero-particles"></div>
+      </div>
+
+      <div class="hero__mid">
+        <!-- Greeting Badge -->
+        <div class="hero__greeting" id="hero-greeting">
+          <div class="greeting__dot"></div>
+          <span class="greeting__text" id="hero-greeting-text">🇺🇸 🎂 Happy Birthday PrismaX 🎂</span>
+        </div>
+
+        <!-- Overlapping Card Stack -->
+        <div class="hero__images">
+          <div class="hero__image" style="--delay: 0;">
+            <div class="shadow"></div>
+            <div class="image-content">
+              <img src="assets/bayley_hero.png" alt="Bayley" class="hero__card-img">
+            </div>
+          </div>
+          <div class="hero__image" style="--delay: 1;">
+            <div class="shadow"></div>
+            <div class="image-content">
+              <img src="assets/chyna_hero.png" alt="Chyna" class="hero__card-img">
+            </div>
+          </div>
+          <div class="hero__image" style="--delay: 2;">
+            <div class="shadow"></div>
+            <div class="image-content">
+              <img src="assets/shaye_hero.jpeg" alt="Shaye" class="hero__card-img">
+            </div>
+          </div>
+          <div class="hero__image" style="--delay: 3;">
+            <div class="shadow"></div>
+            <div class="image-content">
+              <img src="assets/vivian_hero.jpeg" alt="Vivian" class="hero__card-img">
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="hero__title" aria-label="Happy 1st Birthday PrismaX">
+          <span class="word" style="--delay: 0" aria-hidden="true">HAPPY</span>
+          <span class="word" style="--delay: 1" aria-hidden="true">1ST</span>
+          <span class="word" style="--delay: 2" aria-hidden="true">BIRTHDAY</span>
+          <br>
+          <span class="word hero__title--accent" style="--delay: 3" aria-hidden="true">PRISMAX</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero__subtitle" data-animate="fade-up">
+          One year of creativity, collaboration, and countless memories.
+          <br>Today we celebrate the journey that brought us all together! 🎂
+        </p>
+      </div>
+
+      <div class="hero__bot">
+        <div class="scroll-indicator" id="scroll-indicator">
+          <span class="scroll-indicator__text">Scroll to explore</span>
+          <div class="scroll-indicator__arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 2: ABOUT MY JOURNEY                        -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section__title" data-animate="split-words">About My Journey</h2>
+
+        <div class="about__card" data-animate="scale-in">
+          <div class="about__card-logo">
+            <img src="assets/logo.png" alt="PrismaX Logo">
+          </div>
+          <div class="about__avatar">
+            <img src="assets/pfp.jpg" alt="Ayush PFP" class="about__avatar-img" id="about-avatar-img">
+          </div>
+          <div class="about__info">
+            <h3 class="about__name" data-animate="fade-up" id="about-name">Ayush</h3>
+            <p class="about__role" data-animate="fade-up" id="about-role">GroundBreaker, Content Creator</p>
+            <p class="about__bio" data-animate="fade-up">
+              A passionate contributor who found a home in PrismaX, where creativity meets robotics, teleoperation, and Physical AI, and every idea is celebrated. From day one, this journey has been nothing short of magical, and I'm excited for everything that's still to come. 💫🤖
+            </p>
+            <div class="about__stats">
+              <div class="stat time-stat" data-animate="pop">
+                <span class="stat__number" id="time-counter">0d 0h 0m 0s</span>
+                <span class="stat__label">Member Since</span>
+              </div>
+              <div class="stat" data-animate="pop">
+                <span class="stat__number" id="about-stat-content" data-count="100" data-suffix="+">0</span>
+                <span class="stat__label">Content</span>
+              </div>
+              <div class="stat" data-animate="pop">
+                <span class="stat__number" id="about-stat-memories" data-count="1000" data-suffix="+">0</span>
+                <span class="stat__label">Memories</span>
+              </div>
+              <div class="stat" data-animate="pop">
+                <span class="stat__number" id="about-stat-smiles" data-count="100" data-final="Infinite">0</span>
+                <span class="stat__label">Smiles</span>
+              </div>
+            </div>
+
+            <!-- Customize Profile Card Buttons -->
+            <div class="about__card-actions" data-animate="fade-up" data-html2canvas-ignore="true">
+              <button id="about-customize-btn" class="about__customize-btn">
+                <span>⚙️</span> Make Yours
+              </button>
+              <button id="about-reset-btn" class="about__reset-btn">
+                <span>🔄</span> Reset
+              </button>
+              <button id="about-download-btn" class="about__download-btn">
+                <span>📥</span> Download Card
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 3: MY PRISMAX JOURNEY (Horizontal Scroll)  -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="journey" class="section journey">
+      <div class="journey__header">
+        <h2 class="section__title" data-animate="split-words">
+          <span class="section__title-emoji">🚀</span>
+          My PrismaX Journey
+          <span class="section__title-emoji">🚀</span>
+        </h2>
+        <p class="section__subtitle" data-animate="fade-up">A year of growth, learning, and unforgettable moments</p>
+      </div>
+
+      <div class="journey__track-wrapper">
+        <div class="journey__track" id="journey-track">
+          <!-- Milestone 1 -->
+          <div class="journey__milestone" data-color="#FF8FAB">
+            <div class="milestone__icon">🌱</div>
+            <div class="milestone__card">
+              <span class="milestone__date">December 2025</span>
+              <h3 class="milestone__title">The Beginning</h3>
+              <p class="milestone__desc">Joined PrismaX and spent my first few days learning the community by observing experienced contributors. Slowly understood how to contribute effectively before starting my own journey.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="journey__milestone" data-color="#5DD39E">
+            <div class="milestone__icon">🎨</div>
+            <div class="milestone__card">
+              <span class="milestone__date">January 2026</span>
+              <h3 class="milestone__title">First Steps</h3>
+              <p class="milestone__desc">Started creating content and experimenting with digital art while becoming more active in the community. My efforts earned me my first role, marking the beginning of my growth in PrismaX.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="journey__milestone" data-color="#89CFF0">
+            <div class="milestone__icon">✨</div>
+            <div class="milestone__card">
+              <span class="milestone__date">February 2026</span>
+              <h3 class="milestone__title">Growth</h3>
+              <p class="milestone__desc">Got featured in Content Clinic for the first time, where I learned a lot by exploring other creators' work. The positive feedback on my content gave me the confidence and motivation to contribute even more creatively.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 4 -->
+          <div class="journey__milestone" data-color="#FFA62F">
+            <div class="milestone__icon">🛠️</div>
+            <div class="milestone__card">
+              <span class="milestone__date">March 2026</span>
+              <h3 class="milestone__title">Innovation</h3>
+              <p class="milestone__desc">Started building web tools to help PrismaX members create better content and contribute more easily. This became my favorite way to contribute, and those tools helped me gain recognition within the community.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 5 -->
+          <div class="journey__milestone" data-color="#D4A5FF">
+            <div class="milestone__icon">🤝</div>
+            <div class="milestone__card">
+              <span class="milestone__date">April 2026</span>
+              <h3 class="milestone__title">Guiding Members</h3>
+              <p class="milestone__desc">During PrismaX's transition to a new moderator team, I stayed active by guiding new members, supporting the community, and helping with onboarding. I also started hosting X Spaces alongside my content contributions.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 6 -->
+          <div class="journey__milestone" data-color="#FFE135">
+            <div class="milestone__icon">🎯</div>
+            <div class="milestone__card">
+              <span class="milestone__date">May 2026</span>
+              <h3 class="milestone__title">Responsibility</h3>
+              <p class="milestone__desc">Started managing Discord events for the Indian regional community while ensuring everyone had a fair chance to host. Alongside these responsibilities, I continued creating content, building web tools, and developing games to contribute in every way I could.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 7 -->
+          <div class="journey__milestone" data-color="#5DD39E">
+            <div class="milestone__icon">🏆</div>
+            <div class="milestone__card">
+              <span class="milestone__date">June 2026</span>
+              <h3 class="milestone__title">Ground Breaker</h3>
+              <p class="milestone__desc">Achieved my biggest milestone by earning the Ground Breaker role, the highest contribution role in the PrismaX Discord, reserved for the community's top contributors. Reaching this milestone was a dream come true and the proudest moment of my PrismaX journey.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 4: WHAT I LEARNED                          -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="learned" class="section learned">
+      <div class="container">
+        <h2 class="section__title" data-animate="split-words">
+          <span class="section__title-emoji">📚</span>
+          What I Learned
+          <span class="section__title-emoji">📚</span>
+        </h2>
+        <p class="section__subtitle" data-animate="fade-up">Lessons that shaped me, taught by the best community ever</p>
+
+        <div class="learned__grid">
+          <div class="learned__card" data-tilt data-accent="#FF8FAB">
+            <div class="learned__card-icon">🎨</div>
+            <h3 class="learned__card-title">Content Creation</h3>
+            <p class="learned__card-desc">Learning how to transform complex ideas into simple, engaging content that informs, educates, and connects with people.</p>
+          </div>
+
+          <div class="learned__card" data-tilt data-accent="#89CFF0">
+            <div class="learned__card-icon">🤖</div>
+            <h3 class="learned__card-title">Robotics & Physical AI</h3>
+            <p class="learned__card-desc">Understanding how teleoperation, human demonstrations, and real-world data help robots learn to perform tasks more efficiently and intelligently.</p>
+          </div>
+
+          <div class="learned__card" data-tilt data-accent="#D4A5FF">
+            <div class="learned__card-icon">🧠</div>
+            <h3 class="learned__card-title">Creativity</h3>
+            <p class="learned__card-desc">Exploring new perspectives, experimenting with different formats, and constantly finding better ways to present ideas.</p>
+          </div>
+
+          <div class="learned__card" data-tilt data-accent="#FFE135">
+            <div class="learned__card-icon">🤝</div>
+            <h3 class="learned__card-title">Teamwork</h3>
+            <p class="learned__card-desc">Collaborating with people from diverse backgrounds taught me the value of communication, trust, and working toward a shared goal.</p>
+          </div>
+
+          <div class="learned__card" data-tilt data-accent="#FF6B6B">
+            <div class="learned__card-icon">🎤</div>
+            <h3 class="learned__card-title">Event Hosting</h3>
+            <p class="learned__card-desc">Planning and hosting community events helped me improve my organization, confidence, and ability to keep people engaged.</p>
+          </div>
+
+          <div class="learned__card" data-tilt data-accent="#5DD39E">
+            <div class="learned__card-icon">💬</div>
+            <h3 class="learned__card-title">Sharing My Thoughts</h3>
+            <p class="learned__card-desc">Learning to express my opinions clearly, support them with reasoning, and encourage respectful discussions with the community.</p>
+          </div>
+
+          <div class="learned__card" data-tilt data-accent="#FF8FAB">
+            <div class="learned__card-icon">❤️</div>
+            <h3 class="learned__card-title">Helping Others</h3>
+            <p class="learned__card-desc">Supporting newcomers, answering questions, and sharing knowledge reinforced that communities grow stronger when members help one another.</p>
+          </div>
+
+          <div class="learned__card" data-tilt data-accent="#FFA62F">
+            <div class="learned__card-icon">📅</div>
+            <h3 class="learned__card-title">Consistency</h3>
+            <p class="learned__card-desc">Showing up every day and contributing regularly taught me that long-term consistency creates far greater impact than occasional effort.</p>
+          </div>
+
+          <div class="learned__card" data-tilt data-accent="#89CFF0">
+            <div class="learned__card-icon">📚</div>
+            <h3 class="learned__card-title">Continuous Learning</h3>
+            <p class="learned__card-desc">Every event, discussion, and challenge became an opportunity to expand my knowledge and improve my skills.</p>
+          </div>
+
+          <div class="learned__card" data-tilt data-accent="#5DD39E">
+            <div class="learned__card-icon">🌍</div>
+            <h3 class="learned__card-title">Community Building</h3>
+            <p class="learned__card-desc">A great community is built through inclusivity, collaboration, and creating an environment where everyone feels comfortable contributing.</p>
+          </div>
+
+          <div class="learned__card" data-tilt data-accent="#FFE135">
+            <div class="learned__card-icon">🗣️</div>
+            <h3 class="learned__card-title">Communication</h3>
+            <p class="learned__card-desc">Learning to communicate ideas clearly and effectively made collaboration easier and helped build stronger connections.</p>
+          </div>
+
+          <div class="learned__card" data-tilt data-accent="#D4A5FF">
+            <div class="learned__card-icon">🔍</div>
+            <h3 class="learned__card-title">Problem Solving</h3>
+            <p class="learned__card-desc">Overcoming challenges during events and content creation strengthened my ability to think critically and find practical solutions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 5: MY FAVORITE MEMORIES (Carousel)         -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="memories" class="section memories">
+      <div class="container">
+        <h2 class="section__title" data-animate="split-words">
+          <span class="section__title-emoji">📸</span>
+          My Favorite Memories
+          <span class="section__title-emoji">📸</span>
+        </h2>
+        <p class="section__subtitle" data-animate="fade-up">Snapshots from the most wonderful year of my life</p>
+      </div>
+
+      <div class="carousel" id="memories-carousel">
+        <div class="carousel__track" id="carousel-track">
+          <!-- Memory 1 -->
+          <div class="carousel__slide" style="--slide-idx: 0;">
+            <div class="memory-card" style="background: linear-gradient(135deg, #FFF9C4, #FFE0B2);">
+              <span class="memory-card__icon">🪴</span>
+              <span class="memory-card__date">December 2025</span>
+              <p class="memory-card__text">Made my very first PrismaX content and officially began my journey as a contributor. It wasn't perfect, but creating that first post gave me the confidence to learn, improve, and keep contributing consistently.</p>
+            </div>
+          </div>
+
+          <!-- Memory 2 -->
+          <div class="carousel__slide" style="--slide-idx: 1;">
+            <div class="memory-card" style="background: linear-gradient(135deg, #D6EEFF, #EDD6FF);">
+              <span class="memory-card__icon">🎭</span>
+              <span class="memory-card__date">January 2026</span>
+              <p class="memory-card__text">Started creating digital art, made some amazing friends, and learned more about what PrismaX was building. I also earned my very first community role, making me feel like I had truly become part of the community.</p>
+            </div>
+          </div>
+
+          <!-- Memory 3 -->
+          <div class="carousel__slide" style="--slide-idx: 2;">
+            <div class="memory-card" style="background: linear-gradient(135deg, #C8F7DC, #D6EEFF);">
+              <span class="memory-card__icon">📚</span>
+              <span class="memory-card__date">February 2026</span>
+              <p class="memory-card__text">Got picked in Content Clinic for the first time and started learning Canva alongside digital art to improve my creativity. I also began experimenting with articles, videos, and different content formats to grow as a creator.</p>
+            </div>
+          </div>
+
+          <!-- Memory 4 -->
+          <div class="carousel__slide" style="--slide-idx: 3;">
+            <div class="memory-card" style="background: linear-gradient(135deg, #FFD6E0, #FFE0B2);">
+              <span class="memory-card__icon">💻</span>
+              <span class="memory-card__date">March 2026</span>
+              <p class="memory-card__text">Built the PrismaX Content Maker, which received a special mention in Content Clinic. That unexpected recognition became one of the proudest moments of my journey and motivated me to build even more useful tools.</p>
+            </div>
+          </div>
+
+          <!-- Memory 5 -->
+          <div class="carousel__slide" style="--slide-idx: 4;">
+            <div class="memory-card" style="background: linear-gradient(135deg, #EDD6FF, #FFD6E0);">
+              <span class="memory-card__icon">🫂</span>
+              <span class="memory-card__date">April 2026</span>
+              <p class="memory-card__text">One of the most emotional months as our previous moderators stepped down and PrismaX entered a transition phase. I learned from everything they had taught us and tried my best to support, guide, and help the community.</p>
+            </div>
+          </div>
+
+          <!-- Memory 6 -->
+          <div class="carousel__slide" style="--slide-idx: 5;">
+            <div class="memory-card" style="background: linear-gradient(135deg, #FFF9C4, #C8F7DC);">
+              <span class="memory-card__icon">🌟</span>
+              <span class="memory-card__date">May 2026</span>
+              <p class="memory-card__text">Created some of my best content, got featured in Content Clinic multiple times, and was selected for the very first PrismaX Content Spotlight. That recognition meant a lot to me and motivated me to keep improving every day.</p>
+            </div>
+          </div>
+
+          <!-- Memory 7 -->
+          <div class="carousel__slide" style="--slide-idx: 6;">
+            <div class="memory-card" style="background: linear-gradient(135deg, #FFD6E0, #EDD6FF);">
+              <span class="memory-card__icon">👑</span>
+              <span class="memory-card__date">June 2026</span>
+              <p class="memory-card__text">Achieved the biggest milestone of my journey by earning the Ground Breaker role, the highest role in the PrismaX progression system. It was a dream come true, bringing both incredible recognition and even greater responsibility for the future.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 5B: PEOPLE WHO BECAME FAMILY (Carousel)     -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="family" class="section family">
+      <div class="container">
+        <h2 class="section__title" data-animate="split-words">
+          <span class="section__title-emoji">❤️</span>
+          People Who Became Family
+          <span class="section__title-emoji">❤️</span>
+        </h2>
+        <p class="section__subtitle" data-animate="fade-up">The friends who made this journey feel like home</p>
+      </div>
+
+      <div class="carousel" id="family-carousel">
+        <div class="carousel__track" id="family-carousel-track">
+          <!-- Slide 1 -->
+          <div class="carousel__slide" style="--slide-idx: 0;">
+            <div class="family-card" data-family-id="0">
+              <div class="family-card__avatar">
+                <img src="assets/bayley.jpeg" alt="Bayley" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Bayley</h3>
+                <span class="family-card__role">CEO</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel__slide" style="--slide-idx: 1;">
+            <div class="family-card" data-family-id="1">
+              <div class="family-card__avatar">
+                <img src="assets/vivian.jpeg" alt="Vivian" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Vivian</h3>
+                <span class="family-card__role">Marketing Head</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel__slide" style="--slide-idx: 2;">
+            <div class="family-card" data-family-id="2">
+              <div class="family-card__avatar">
+                <img src="assets/Maxcc.png" alt="MaxCC" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">MaxCC</h3>
+                <span class="family-card__role">Moderator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel__slide" style="--slide-idx: 3;">
+            <div class="family-card" data-family-id="3">
+              <div class="family-card__avatar">
+                <img src="assets/Altmax.png" alt="Altmax" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Altmax</h3>
+                <span class="family-card__role">Regional Ambassador</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="carousel__slide" style="--slide-idx: 4;">
+            <div class="family-card" data-family-id="4">
+              <div class="family-card__avatar">
+                <img src="assets/Shifu.png" alt="Shifu" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Shifu</h3>
+                <span class="family-card__role">Regional Ambassador</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="carousel__slide" style="--slide-idx: 5;">
+            <div class="family-card" data-family-id="5">
+              <div class="family-card__avatar">
+                <img src="assets/Sarcastic.png" alt="Sarcastic" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Sarcastic</h3>
+                <span class="family-card__role">Regional Ambassador</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 7 -->
+          <div class="carousel__slide" style="--slide-idx: 6;">
+            <div class="family-card" data-family-id="6">
+              <div class="family-card__avatar">
+                <img src="assets/FAHD.png" alt="Fahd" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Fahd</h3>
+                <span class="family-card__role">Regional Ambassador</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 8 -->
+          <div class="carousel__slide" style="--slide-idx: 7;">
+            <div class="family-card" data-family-id="7">
+              <div class="family-card__avatar">
+                <img src="assets/Mehedi.png" alt="Mehidi" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Mehidi</h3>
+                <span class="family-card__role">Groundbreaker</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 9 -->
+          <div class="carousel__slide" style="--slide-idx: 8;">
+            <div class="family-card" data-family-id="8">
+              <div class="family-card__avatar">
+                <img src="assets/Chris.png" alt="Chris" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Chris</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 10 -->
+          <div class="carousel__slide" style="--slide-idx: 9;">
+            <div class="family-card" data-family-id="9">
+              <div class="family-card__avatar">
+                <img src="assets/Katty.png" alt="Katty" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Katty</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 11 -->
+          <div class="carousel__slide" style="--slide-idx: 10;">
+            <div class="family-card" data-family-id="10">
+              <div class="family-card__avatar">
+                <img src="assets/Nickhil.png" alt="Nixkhil" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Nixkhil</h3>
+                <span class="family-card__role">Groundbreaker</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 12 -->
+          <div class="carousel__slide" style="--slide-idx: 11;">
+            <div class="family-card" data-family-id="11">
+              <div class="family-card__avatar">
+                <img src="assets/KingOPw3.png" alt="Kingop03" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Kingop03</h3>
+                <span class="family-card__role">Groundbreaker</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 13 -->
+          <div class="carousel__slide" style="--slide-idx: 12;">
+            <div class="family-card" data-family-id="12">
+              <div class="family-card__avatar">
+                <img src="assets/KitesuuX.png" alt="KitesuuX" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">KitesuuX</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 14 -->
+          <div class="carousel__slide" style="--slide-idx: 13;">
+            <div class="family-card" data-family-id="13">
+              <div class="family-card__avatar">
+                <img src="assets/Kastew.png" alt="Kastew" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Kastew</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 15 -->
+          <div class="carousel__slide" style="--slide-idx: 14;">
+            <div class="family-card" data-family-id="14">
+              <div class="family-card__avatar">
+                <img src="assets/Chetan.png" alt="Chetan" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Chetan</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 16 -->
+          <div class="carousel__slide" style="--slide-idx: 15;">
+            <div class="family-card" data-family-id="15">
+              <div class="family-card__avatar">
+                <img src="assets/Akash.png" alt="Akash" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Akash</h3>
+                <span class="family-card__role">Digital Artist</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 17 -->
+          <div class="carousel__slide" style="--slide-idx: 16;">
+            <div class="family-card" data-family-id="16">
+              <div class="family-card__avatar">
+                <img src="assets/Likith.k.png" alt="Likith" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Likith</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 18 -->
+          <div class="carousel__slide" style="--slide-idx: 17;">
+            <div class="family-card" data-family-id="17">
+              <div class="family-card__avatar">
+                <img src="assets/Byakuya.png" alt="Byakuya" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Byakuya</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 19 -->
+          <div class="carousel__slide" style="--slide-idx: 18;">
+            <div class="family-card" data-family-id="18">
+              <div class="family-card__avatar">
+                <img src="assets/Gta.png" alt="GTA" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">GTA</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 20 -->
+          <div class="carousel__slide" style="--slide-idx: 19;">
+            <div class="family-card" data-family-id="19">
+              <div class="family-card__avatar">
+                <img src="assets/0xdumbdegen.png" alt="0xDumbDegen" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">0xDumbDegen</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 21 -->
+          <div class="carousel__slide" style="--slide-idx: 20;">
+            <div class="family-card" data-family-id="20">
+              <div class="family-card__avatar">
+                <img src="assets/Creed.png" alt="Creed" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Creed</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 22 -->
+          <div class="carousel__slide" style="--slide-idx: 21;">
+            <div class="family-card" data-family-id="21">
+              <div class="family-card__avatar">
+                <img src="assets/Hitesh.png" alt="Hitesh" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Hitesh</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 23 -->
+          <div class="carousel__slide" style="--slide-idx: 22;">
+            <div class="family-card" data-family-id="22">
+              <div class="family-card__avatar">
+                <img src="assets/Dex - Asta.png" alt="Dex" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Dex</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 24 -->
+          <div class="carousel__slide" style="--slide-idx: 23;">
+            <div class="family-card" data-family-id="23">
+              <div class="family-card__avatar">
+                <img src="assets/Ifeoma1010.png" alt="Ifeoma" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Ifeoma</h3>
+                <span class="family-card__role">Digital Artist</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 25 -->
+          <div class="carousel__slide" style="--slide-idx: 24;">
+            <div class="family-card" data-family-id="24">
+              <div class="family-card__avatar">
+                <img src="assets/Shelly.png" alt="Shelly" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Shelly</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 26 -->
+          <div class="carousel__slide" style="--slide-idx: 25;">
+            <div class="family-card" data-family-id="25">
+              <div class="family-card__avatar">
+                <img src="assets/Devi Ceo.png" alt="Devi ceo" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Devi ceo</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 27 -->
+          <div class="carousel__slide" style="--slide-idx: 26;">
+            <div class="family-card" data-family-id="26">
+              <div class="family-card__avatar">
+                <img src="assets/Salted juice.jpg" alt="Salted Juice" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Salted Juice</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 28 -->
+          <div class="carousel__slide" style="--slide-idx: 27;">
+            <div class="family-card" data-family-id="27">
+              <div class="family-card__avatar">
+                <img src="assets/Azittt.jpg" alt="Azittt" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Azittt</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 29 -->
+          <div class="carousel__slide" style="--slide-idx: 28;">
+            <div class="family-card" data-family-id="28">
+              <div class="family-card__avatar">
+                <img src="assets/who am i.jpg" alt="Who am I" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">Who am I</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+
+          <!-- Slide 30 -->
+          <div class="carousel__slide" style="--slide-idx: 29;">
+            <div class="family-card" data-family-id="29">
+              <div class="family-card__avatar">
+                <img src="assets/zamarti.jpg" alt="ZaMarti" class="family-card__img">
+              </div>
+              <div class="family-card__info">
+                <h3 class="family-card__name">ZaMarti</h3>
+                <span class="family-card__role">Content Creator</span>
+              </div>
+              <span class="family-card__more">👁️ View ➔</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 6: WHY PRISMAX IS SPECIAL                  -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="special" class="section special">
+      <div class="container">
+        <h2 class="section__title" data-animate="split-words">
+          <span class="section__title-emoji">💖</span>
+          Why PrismaX Is Special To Me
+          <span class="section__title-emoji">💖</span>
+        </h2>
+
+        <div class="special__content" data-animate="stagger-lines">
+          <p class="special__text">PrismaX isn't just a community. It's a <strong>family</strong>. From the very first day, I was welcomed with kindness, support, and a genuine sense of belonging.</p>
+          <p class="special__text">The <strong>incredible people</strong> I've met here have become some of my closest friends. We've learned together, built together, shared ideas, and celebrated each other's growth.</p>
+          <p class="special__text">The <strong>learning environment</strong> is unlike anything I've experienced. Every question is encouraged, every challenge becomes a lesson, and every achievement motivates the entire community.</p>
+          <p class="special__text">PrismaX gave me <strong>opportunities I never imagined</strong>. From exploring robotics and Physical AI to creating content, hosting events, and collaborating with amazing people, every experience helped me grow.</p>
+          <p class="special__text">Most importantly, PrismaX <strong>inspired me to never stop learning</strong>. It taught me to stay consistent, keep creating, support others, and always strive to become a better version of myself.</p>
+        </div>
+
+        <!-- Floating decorations -->
+        <div class="special__decorations">
+          <span class="special__deco" style="--x: 8%; --y: 10%; --d: 0s;">⭐</span>
+          <span class="special__deco" style="--x: 92%; --y: 15%; --d: 0.5s;">🌸</span>
+          <span class="special__deco" style="--x: 5%; --y: 60%; --d: 1s;">✨</span>
+          <span class="special__deco" style="--x: 95%; --y: 45%; --d: 1.5s;">🎈</span>
+          <span class="special__deco" style="--x: 85%; --y: 80%; --d: 2s;">🤖</span>
+          <span class="special__deco" style="--x: 10%; --y: 85%; --d: 0.3s;">💕</span>
+          <span class="special__deco" style="--x: 50%; --y: 5%; --d: 1.8s;">🎀</span>
+          <span class="special__deco" style="--x: 30%; --y: 90%; --d: 0.7s;">🌟</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 7: GROUNDBREAKER ACHIEVEMENT               -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="groundbreaker" class="section groundbreaker">
+      <div class="container">
+        <h2 class="section__title" data-animate="split-words">
+          <span class="section__title-emoji">🏆</span>
+          Groundbreaker
+          <span class="section__title-emoji">🏆</span>
+        </h2>
+
+        <div class="groundbreaker__showcase">
+          <!-- Trophy SVG -->
+          <div class="groundbreaker__trophy" data-animate="trophy-reveal">
+            <svg viewBox="0 0 200 240" class="trophy-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="trophy-glow">
+                  <stop offset="0%" stop-color="#FFE135" stop-opacity="0.6"/>
+                  <stop offset="100%" stop-color="#FFE135" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="trophy-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="50%" stop-color="#FFA62F"/>
+                  <stop offset="100%" stop-color="#FFD700"/>
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="90" fill="url(#trophy-glow)" class="trophy-glow-circle"/>
+              <path d="M 60 50 L 60 120 Q 60 160 100 170 Q 140 160 140 120 L 140 50 Z" fill="url(#trophy-gold)" stroke="#E6A800" stroke-width="2"/>
+              <path d="M 60 60 Q 25 60 25 90 Q 25 120 60 120" fill="none" stroke="url(#trophy-gold)" stroke-width="8" stroke-linecap="round"/>
+              <path d="M 140 60 Q 175 60 175 90 Q 175 120 140 120" fill="none" stroke="url(#trophy-gold)" stroke-width="8" stroke-linecap="round"/>
+              <text x="100" y="108" text-anchor="middle" font-size="36">⭐</text>
+              <rect x="90" y="170" width="20" height="25" fill="url(#trophy-gold)"/>
+              <rect x="65" y="195" width="70" height="15" rx="5" fill="url(#trophy-gold)" stroke="#E6A800" stroke-width="1.5"/>
+              <rect x="55" y="210" width="90" height="12" rx="4" fill="url(#trophy-gold)" stroke="#E6A800" stroke-width="1.5"/>
+              <text x="100" y="222" text-anchor="middle" font-size="10" fill="#8B6914">#1</text>
+            </svg>
+          </div>
+
+          <div class="groundbreaker__card" data-animate="fade-up">
+            <div class="groundbreaker__badge">🏅</div>
+            <h3 class="groundbreaker__title">From Contributor to Groundbreaker</h3>
+            <p class="groundbreaker__desc">
+              Reaching the Groundbreaker role in PrismaX is one of the proudest achievements of my life. It represents months of dedication, countless late nights, and an unwavering love for this community.
+            </p>
+            <p class="groundbreaker__desc">
+              This isn't just a title — it's a symbol of trust, recognition, and belonging. It means PrismaX saw my passion, valued my contributions, and believed in my potential.
+            </p>
+            <p class="groundbreaker__quote">
+              "Every expert was once a beginner. Every Groundbreaker was once a dreamer." ✨
+            </p>
+            <div class="groundbreaker__medals">
+              <span class="groundbreaker__medal">🥇</span>
+              <span class="groundbreaker__medal">🏅</span>
+              <span class="groundbreaker__medal">🎖️</span>
+              <span class="groundbreaker__medal">👑</span>
+              <span class="groundbreaker__medal">💎</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 8: BIRTHDAY WISHES                         -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="wishes" class="section wishes">
+      <div class="container">
+        <h2 class="section__title" data-animate="split-words">
+          <span class="section__title-emoji">🎂</span>
+          Birthday Wishes
+          <span class="section__title-emoji">🎂</span>
+        </h2>
+
+        <div class="wishes__content">
+          <div class="wishes__paragraph" data-animate="text-reveal">
+            <p>Dear PrismaX, happy birthday to the most incredible community I've ever been part of! 🎉</p>
+          </div>
+
+          <div class="wishes__paragraph" data-animate="text-reveal">
+            <p>Thank you to the entire PrismaX team for creating a space where creativity, innovation, and collaboration thrive. Through robotics, teleoperation, and Physical AI, you've shown us how technology and human intelligence can work together to shape the future.</p>
+          </div>
+
+          <div class="wishes__paragraph" data-animate="text-reveal">
+            <p>Thank you to every member of this amazing community. Your kindness, passion, and willingness to support one another are what truly make PrismaX special, and it's an honor to be part of this journey with all of you.</p>
+          </div>
+
+          <div class="wishes__paragraph" data-animate="text-reveal">
+            <p>I wish PrismaX many more years of innovation, groundbreaking achievements, and global impact. May we continue learning, building, and pushing the boundaries of robotics and AI together.</p>
+          </div>
+
+          <div class="wishes__paragraph" data-animate="text-reveal">
+            <p>I'm incredibly excited for everything that's still to come. More robots, bigger breakthroughs, stronger friendships, and countless new milestones. The future is bright, and this is only the beginning. 🚀</p>
+          </div>
+
+          <div class="wishes__thankyou" data-animate="scale-in">
+            <div class="wishes__thankyou-hearts">💖🤖✨💖🌸</div>
+            <p class="wishes__thankyou-text">
+              "From the bottom of my heart, thank you, PrismaX. Thank you for giving me a community I can call home. Thank you for making me believe in myself and inspiring me to explore the future of robotics, teleoperation, and Physical AI. Thank you for the most wonderful journey so far. I can't wait to see what the future holds for all of us. 🫶🚀"
+            </p>
+            <p class="wishes__thankyou-sign">With all my love ❤️</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION 9: GRAND FINALE — Cake Cutting             -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <section id="finale" class="section finale">
+      <div class="container">
+        <h2 class="section__title" data-animate="split-words">
+          <span class="section__title-emoji">🎂</span>
+          The Grand Celebration
+          <span class="section__title-emoji">🎂</span>
+        </h2>
+        <p class="section__subtitle" data-animate="fade-up">The moment we've all been waiting for!</p>
+
+        <!-- Birthday Cake -->
+        <div id="birthday-cake-finale" class="finale__cake" data-animate="scale-in">
+          <svg viewBox="0 0 400 380" class="finale__cake-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="clip-left"><rect x="-50" y="-50" width="250" height="500"/></clipPath>
+              <clipPath id="clip-right"><rect x="200" y="-50" width="250" height="500"/></clipPath>
+              <linearGradient id="knife-blade" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#C0C0C0"/>
+                <stop offset="50%" stop-color="#FFFFFF"/>
+                <stop offset="100%" stop-color="#909090"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Plate -->
+            <ellipse cx="200" cy="305" rx="190" ry="22" fill="#FFE8C8"/>
+            <ellipse cx="200" cy="302" rx="185" ry="18" fill="#FFF8E7"/>
+
+            <!-- LEFT HALF -->
+            <g class="cake-half-left" clip-path="url(#clip-left)">
+              <g class="finale-candles">
+                <g><rect x="100" y="45" width="12" height="55" rx="4" fill="#FF8FAB"/><g class="candle-flame" style="--flame-delay:0s"><ellipse cx="106" cy="40" rx="7" ry="12" fill="#FFA62F"/><ellipse cx="106" cy="37" rx="4" ry="7" fill="#FFE135"/></g></g>
+                <g><rect x="150" y="35" width="12" height="65" rx="4" fill="#89CFF0"/><g class="candle-flame" style="--flame-delay:0.2s"><ellipse cx="156" cy="30" rx="7" ry="12" fill="#FFA62F"/><ellipse cx="156" cy="27" rx="4" ry="7" fill="#FFE135"/></g></g>
+                <g><rect x="194" y="25" width="14" height="75" rx="4" fill="#D4A5FF"/><g class="candle-flame" style="--flame-delay:0.4s"><ellipse cx="201" cy="20" rx="8" ry="14" fill="#FFA62F"/><ellipse cx="201" cy="16" rx="5" ry="8" fill="#FFE135"/></g></g>
+                <g><rect x="240" y="35" width="12" height="65" rx="4" fill="#5DD39E"/><g class="candle-flame" style="--flame-delay:0.6s"><ellipse cx="246" cy="30" rx="7" ry="12" fill="#FFA62F"/><ellipse cx="246" cy="27" rx="4" ry="7" fill="#FFE135"/></g></g>
+                <g><rect x="290" y="45" width="12" height="55" rx="4" fill="#FFE135"/><g class="candle-flame" style="--flame-delay:0.8s"><ellipse cx="296" cy="40" rx="7" ry="12" fill="#FFA62F"/><ellipse cx="296" cy="37" rx="4" ry="7" fill="#FFE135"/></g></g>
+              </g>
+              <g class="cake-layer cake-top"><rect x="80" y="100" width="240" height="60" rx="20" fill="#FF8FAB"/><rect x="80" y="100" width="240" height="25" rx="20" fill="#FFCCD5"/></g>
+              <g class="cake-layer cake-middle"><rect x="50" y="160" width="300" height="65" rx="20" fill="#FFE135"/><rect x="50" y="160" width="300" height="25" rx="20" fill="#FFF176"/></g>
+              <g class="cake-layer cake-bottom"><rect x="20" y="225" width="360" height="75" rx="22" fill="#5DD39E"/><rect x="20" y="225" width="360" height="28" rx="22" fill="#7EDBB3"/></g>
+              <text x="200" y="270" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="22" fill="white" stroke="#4A3728" stroke-width="0.5">Happy Birthday!</text>
+            </g>
+
+            <!-- RIGHT HALF -->
+            <g class="cake-half-right" clip-path="url(#clip-right)">
+              <g class="finale-candles">
+                <g><rect x="100" y="45" width="12" height="55" rx="4" fill="#FF8FAB"/><g class="candle-flame" style="--flame-delay:0s"><ellipse cx="106" cy="40" rx="7" ry="12" fill="#FFA62F"/><ellipse cx="106" cy="37" rx="4" ry="7" fill="#FFE135"/></g></g>
+                <g><rect x="150" y="35" width="12" height="65" rx="4" fill="#89CFF0"/><g class="candle-flame" style="--flame-delay:0.2s"><ellipse cx="156" cy="30" rx="7" ry="12" fill="#FFA62F"/><ellipse cx="156" cy="27" rx="4" ry="7" fill="#FFE135"/></g></g>
+                <g><rect x="194" y="25" width="14" height="75" rx="4" fill="#D4A5FF"/><g class="candle-flame" style="--flame-delay:0.4s"><ellipse cx="201" cy="20" rx="8" ry="14" fill="#FFA62F"/><ellipse cx="201" cy="16" rx="5" ry="8" fill="#FFE135"/></g></g>
+                <g><rect x="240" y="35" width="12" height="65" rx="4" fill="#5DD39E"/><g class="candle-flame" style="--flame-delay:0.6s"><ellipse cx="246" cy="30" rx="7" ry="12" fill="#FFA62F"/><ellipse cx="246" cy="27" rx="4" ry="7" fill="#FFE135"/></g></g>
+                <g><rect x="290" y="45" width="12" height="55" rx="4" fill="#FFE135"/><g class="candle-flame" style="--flame-delay:0.8s"><ellipse cx="296" cy="40" rx="7" ry="12" fill="#FFA62F"/><ellipse cx="296" cy="37" rx="4" ry="7" fill="#FFE135"/></g></g>
+              </g>
+              <g class="cake-layer cake-top"><rect x="80" y="100" width="240" height="60" rx="20" fill="#FF8FAB"/><rect x="80" y="100" width="240" height="25" rx="20" fill="#FFCCD5"/></g>
+              <g class="cake-layer cake-middle"><rect x="50" y="160" width="300" height="65" rx="20" fill="#FFE135"/><rect x="50" y="160" width="300" height="25" rx="20" fill="#FFF176"/></g>
+              <g class="cake-layer cake-bottom"><rect x="20" y="225" width="360" height="75" rx="22" fill="#5DD39E"/><rect x="20" y="225" width="360" height="28" rx="22" fill="#7EDBB3"/></g>
+              <text x="200" y="270" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="22" fill="white" stroke="#4A3728" stroke-width="0.5">Happy Birthday!</text>
+            </g>
+
+            <!-- Cut Line -->
+            <line id="cake-cut-line" class="cake-cut-line" x1="200" y1="30" x2="200" y2="300" stroke="#FFD700" stroke-width="4" stroke-dasharray="8 6" style="opacity:0"/>
+            <!-- Knife -->
+            <g id="cake-knife" class="cake-knife" style="opacity:0; transform: translate3d(0,-80px,0);">
+              <rect x="197" y="-20" width="6" height="180" rx="2" fill="url(#knife-blade)"/>
+              <rect x="187" y="160" width="26" height="40" rx="5" fill="#8B7355"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Cut Cake Button -->
+        <button id="cut-cake-btn" class="finale__btn" data-animate="fade-up">
+          <span class="finale__btn-icon">🎂</span>
+          <span class="finale__btn-text">Cut the Birthday Cake</span>
+          <span class="finale__btn-sparkle">✨</span>
+        </button>
+      </div>
+
+      <!-- Confetti Container -->
+      <div id="confetti-container" class="confetti-container"></div>
+
+      <!-- Video Modal -->
+      <div id="video-modal" class="modal">
+        <div class="modal__backdrop"></div>
+        <div class="modal__content">
+          <button class="modal__close" id="modal-close">✕</button>
+          <div class="modal__body">
+            <video id="celebration-video" controls playsinline>
+              <source src="video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Family Details Modal -->
+      <div id="family-modal" class="modal">
+        <div class="modal__backdrop"></div>
+        <div class="modal__content family-modal__content">
+          <button class="modal__close" id="family-modal-close">✕</button>
+          <div class="modal__body family-modal__body">
+            <div class="family-modal__header">
+              <div class="family-modal__avatar">
+                <img src="" alt="" id="family-modal-img" class="family-modal__img">
+              </div>
+              <div class="family-modal__meta">
+                <h3 class="family-modal__name" id="family-modal-name">Member Name</h3>
+                <p class="family-modal__role" id="family-modal-role">Role Description</p>
+              </div>
+            </div>
+            <div class="family-modal__thoughts">
+              <p class="family-modal__desc" id="family-modal-desc">Detailed thoughts...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customize Card Modal -->
+      <div id="customize-modal" class="modal">
+        <div class="modal__backdrop"></div>
+        <div class="modal__content customize-modal__content">
+          <button class="modal__close" id="customize-modal-close">✕</button>
+          <div class="modal__body customize-modal__body">
+            <h3 class="customize-modal__title">Customize Card</h3>
+            <form id="customize-form" class="customize-form" autocomplete="off">
+              <div class="form-group">
+                <label for="input-name">Name</label>
+                <input type="text" id="input-name" name="name" required placeholder="Your Name" value="Ayush">
+              </div>
+              <div class="form-group">
+                <label for="input-role">Role / Title</label>
+                <input type="text" id="input-role" name="role" required placeholder="GroundBreaker, Content Creator" value="GroundBreaker, Content Creator">
+              </div>
+              <div class="form-group">
+                <label for="input-joindate">Member Since (Join Date)</label>
+                <input type="date" id="input-joindate" name="joindate" required value="2025-12-17">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="input-content">Content</label>
+                  <input type="text" id="input-content" name="content" required placeholder="e.g. 100+" value="100+">
+                </div>
+                <div class="form-group">
+                  <label for="input-memories">Memories</label>
+                  <input type="text" id="input-memories" name="memories" required placeholder="e.g. 1000+" value="1000+">
+                </div>
+                <div class="form-group">
+                  <label for="input-smiles">Smiles</label>
+                  <input type="text" id="input-smiles" name="smiles" required placeholder="e.g. Infinite" value="Infinite">
+                </div>
+              </div>
+              <div class="form-group file-group">
+                <label for="input-pfp" class="custom-file-upload">
+                  <span>📸 Upload PFP</span>
+                  <input type="file" id="input-pfp" name="pfp" accept="image/*">
+                </label>
+                <span id="file-name-display" class="file-name-display">No file selected</span>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="customize-form__submit-btn">Apply Changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finale Farewell Message -->
+      <div id="finale-message" class="finale__farewell" style="display: none;">
+        <div class="finale__farewell-robot">
+          <svg viewBox="0 0 200 280" class="farewell-robot-svg" xmlns="http://www.w3.org/2000/svg">
+            <g class="robot-antenna"><line x1="100" y1="28" x2="100" y2="55" stroke="#FFE135" stroke-width="5" stroke-linecap="round"/><circle cx="100" cy="22" r="9" fill="#FF8FAB"/></g>
+            <rect x="50" y="55" width="100" height="80" rx="22" fill="#89CFF0"/>
+            <circle cx="78" cy="88" r="14" fill="white"/><circle cx="78" cy="88" r="7" fill="#4A3728"/><circle cx="82" cy="84" r="3" fill="white"/>
+            <circle cx="122" cy="88" r="14" fill="white"/><circle cx="122" cy="88" r="7" fill="#4A3728"/><circle cx="126" cy="84" r="3" fill="white"/>
+            <path d="M 75 108 Q 100 135 125 108" fill="#FF8FAB" stroke="#4A3728" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="58" cy="106" r="9" fill="#FFCCD5" opacity="0.6"/>
+            <circle cx="142" cy="106" r="9" fill="#FFCCD5" opacity="0.6"/>
+            <rect x="45" y="140" width="110" height="95" rx="18" fill="#5DD39E"/>
+            <text x="100" y="185" text-anchor="middle" font-size="26">❤️</text>
+            <text x="100" y="215" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="13" fill="white">PrismaX</text>
+            <g class="farewell-wave-arm"><rect x="12" y="152" width="35" height="18" rx="9" fill="#89CFF0"/></g>
+            <rect x="153" y="152" width="35" height="18" rx="9" fill="#89CFF0"/>
+            <rect x="62" y="235" width="24" height="32" rx="10" fill="#FFE135"/>
+            <rect x="114" y="235" width="24" height="32" rx="10" fill="#FFE135"/>
+          </svg>
+        </div>
+
+        <div class="finale__farewell-card">
+          <p class="finale__farewell-text">Happy Birthday PrismaX ❤️</p>
+          <p class="finale__farewell-sub">Thank you for an unforgettable first year.</p>
+          <p class="finale__farewell-sub">Here's to many more years of learning, building, and growing together.</p>
+          <div class="finale__farewell-emojis">🎉🎂🤖💖✨🚀🌟🎈</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- FOOTER (Fixed behind main content)                      -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <footer class="footer" id="site-footer">
+    <div class="footer__content">
+      <p class="footer__title">PRISMAX</p>
+      <p class="footer__text">Made with 💖 for PrismaX's 1st Birthday</p>
+      <p class="footer__sub">Every pixel of this website is a celebration of an incredible year</p>
+      <p class="footer__author" style="font-weight: bold; margin-top: var(--sp-sm); font-size: 1.1rem; opacity: 0.9; letter-spacing: 0.05em; text-transform: uppercase;">Made by Ayush</p>
+      <div class="footer__emojis">🎂🎉🤖✨🎈💖🌟🎁</div>
+    </div>
+  </footer>
+  <!-- Footer phantom spacer -->
+  <div class="footer-phantom"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- COLOR PICKER (Spencer Gabor style)                      -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="color-picker" id="color-picker" open="false" visible="true">
+    <button class="color-picker__toggle" id="color-picker-toggle" aria-label="Choose Theme Color">🎨</button>
+    <label class="color-picker__swatch" style="--idx: 0;">
+      <input type="radio" name="theme-color" value="birthday" checked>
+      <span class="color-picker__circle" style="background:#FFE135;"></span>
+    </label>
+    <label class="color-picker__swatch" style="--idx: 1;">
+      <input type="radio" name="theme-color" value="rose">
+      <span class="color-picker__circle" style="background:#FF8FAB;"></span>
+    </label>
+    <label class="color-picker__swatch" style="--idx: 2;">
+      <input type="radio" name="theme-color" value="ocean">
+      <span class="color-picker__circle" style="background:#89CFF0;"></span>
+    </label>
+    <label class="color-picker__swatch" style="--idx: 3;">
+      <input type="radio" name="theme-color" value="forest">
+      <span class="color-picker__circle" style="background:#5DD39E;"></span>
+    </label>
+    <label class="color-picker__swatch" style="--idx: 4;">
+      <input type="radio" name="theme-color" value="sunset">
+      <span class="color-picker__circle" style="background:#FFA62F;"></span>
+    </label>
+  </div>
+
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="custom-cursor">
+    <img src="assets/cake-cursor.png" alt="Cake Cursor">
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SCRIPTS — Professional Animation Stack (CDN)            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- GSAP Core + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- Howler.js Sound -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+  <!-- html2canvas Card Rendering -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <!-- App Scripts -->
+  <script src="js/engine.js?v=3"></script>
+  <script src="js/carousel.js?v=3"></script>
+  <script src="js/robot.js"></script>
+  <script src="js/sounds.js"></script>
+  <script src="js/finale.js"></script>
+  <script src="js/app.js?v=3"></script>
+
+</body>
+</html>

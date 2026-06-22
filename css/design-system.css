@@ -1,0 +1,169 @@
+/* ============================================================
+   DESIGN SYSTEM — Professional Easing, Tokens & GPU Utilities
+   PrismaX Birthday Website — Complete Rebuild
+   ============================================================ */
+
+:root {
+  /* ── Safe Areas ── */
+  --safe-top: env(safe-area-inset-top);
+  --safe-right: env(safe-area-inset-right);
+  --safe-bottom: env(safe-area-inset-bottom);
+  --safe-left: env(safe-area-inset-left);
+
+  /* ── Typography ── */
+  --font-headline: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* ── Spacing Scale ── */
+  --sp-2xs: 0.25rem;
+  --sp-xs: 0.5rem;
+  --sp-sm: 0.75rem;
+  --sp-md: 1rem;
+  --sp-lg: 1.5rem;
+  --sp-xl: 2rem;
+  --sp-2xl: 3rem;
+  --sp-3xl: 4rem;
+  --sp-4xl: 6rem;
+  --sp-5xl: 8rem;
+
+  /* ── Layout ── */
+  --padding: 1rem;
+  --gap: 1rem;
+  --max-width: 1200px;
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 50rem;
+
+  /* ── Birthday Color Palette ── */
+  --sunshine: #FFE135;
+  --sunshine-light: #FFF9C4;
+  --pink: #FF8FAB;
+  --pink-light: #FFD6E0;
+  --blue: #89CFF0;
+  --blue-light: #D6EEFF;
+  --green: #5DD39E;
+  --green-light: #C8F7DC;
+  --purple: #D4A5FF;
+  --purple-light: #EDD6FF;
+  --orange: #FFA62F;
+  --orange-light: #FFE0B2;
+  --red-heart: #FF6B6B;
+  --cream: #FFFEF5;
+  --warm-white: #FFF8F0;
+  --dark: #1a1a2e;
+  --dark-surface: #16213e;
+  --gold: #FFD700;
+
+  /* ── Theme System (default: warm birthday) ── */
+  --color-primary: #FFFEF5;
+  --color-onPrimary: #2c2c2c;
+  --color-secondary: #FFE135;
+  --color-onSecondary: #2c2c2c;
+  --color-accent: #FF8FAB;
+  --color-surface: #ffffff;
+  --color-muted: #999999;
+
+  /* ── Borders & Shadows ── */
+  --border-thick: 3px solid var(--color-onPrimary);
+  --border-thin: 1.5px solid rgba(0,0,0,0.08);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+  --shadow-solid: 5px 5px 0 var(--color-onPrimary);
+  --shadow-solid-hover: 8px 8px 0 var(--color-onPrimary);
+  --shadow-solid-active: 2px 2px 0 var(--color-onPrimary);
+  --shadow-glow: 0 0 40px rgba(255,225,53,0.3);
+  --shadow-card: 0px 9px 21px rgba(0,0,0,0.08), 0px 38px 38px rgba(0,0,0,0.06), 0px 85px 51px rgba(0,0,0,0.03);
+
+  /* ── Z-Index Scale ── */
+  --z-base: 1;
+  --z-card: 10;
+  --z-sticky: 100;
+  --z-nav: 200;
+  --z-overlay: 500;
+  --z-modal: 900;
+  --z-preloader: 9999;
+
+  /* ── Professional Easing Curves ── */
+  /* Spencer Gabor-inspired elastic and spring easings */
+  --ease-out-elastic: linear(
+    0, .5737 7.6%, .8382 11.87%, .9463 14.19%,
+    1.0292 16.54%, 1.0886 18.97%, 1.1258 21.53%,
+    1.137 22.97%, 1.1424 24.48%, 1.1423 26.1%,
+    1.1366 27.86%, 1.1165 31.01%, 1.0507 38.62%,
+    1.0219 42.57%, .9995 46.99%, .9872 51.63%,
+    .9842 58.77%, 1.0011 81.26%, 1
+  );
+
+  --ease-out-elastic-strong: linear(
+    0, .2178 2.1%, 1.1144 8.49%, 1.2959 10.7%,
+    1.3463 11.81%, 1.3705 12.94%, 1.3726,
+    1.3643 14.48%, 1.3151 16.2%, 1.0317 21.81%,
+    .941 24.01%, .8912 25.91%, .8694 27.84%,
+    .8698 29.21%, .8824 30.71%, 1.0122 38.33%,
+    1.0357, 1.046 42.71%, 1.0416 45.7%,
+    .9961 53.26%, .9839 57.54%, .9853 60.71%,
+    1.0012 68.14%, 1.0056 72.24%, .9981 86.66%, 1
+  );
+
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+
+  /* ── Font Sizing ── */
+  --font-h1: clamp(3.5rem, 8vw, 6.5rem) / 0.85 var(--font-headline);
+  --font-h2: clamp(2.2rem, 5vw, 4rem) / 0.85 var(--font-headline);
+  --font-h3: clamp(1.4rem, 3vw, 2rem) / 0.9 var(--font-headline);
+  --font-h4: 0.875rem / 1 var(--font-headline);
+  --font-body: 500 1rem / 1.5 var(--font-body);
+  --font-small: 500 0.875rem / 1.4 var(--font-body);
+  --font-caption: 500 0.75rem / 1 var(--font-body);
+}
+
+/* ── Tablet ── */
+@media (min-width: 768px) {
+  :root {
+    --padding: 1.5rem;
+    --gap: 1.5rem;
+  }
+}
+
+/* ── Desktop ── */
+@media (min-width: 1024px) {
+  :root {
+    --padding: 2rem;
+    --gap: 2rem;
+  }
+}
+
+/* ── GPU Acceleration Utilities ── */
+.gpu {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.gpu-opacity {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.contain-paint {
+  contain: paint;
+}
+
+.contain-layout {
+  contain: layout;
+}
+
+.contain-strict {
+  contain: strict;
+}
