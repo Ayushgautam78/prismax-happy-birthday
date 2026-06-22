@@ -446,6 +446,7 @@
     });
 
     // 3D Tilt on hover
+    const cards = section.querySelectorAll('.learned__card');
     cards.forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
