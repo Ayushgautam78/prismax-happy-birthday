@@ -1821,7 +1821,7 @@
   .family-modal__content {
     max-width: 92%;
     padding: var(--sp-lg) var(--sp-md) !important;
-    max-height: 85vh;
+    max-height: none;
     display: flex;
     flex-direction: column;
     box-shadow: 8px 8px 0 var(--color-onPrimary) !important;
@@ -1839,9 +1839,8 @@
     font-size: 1.4rem;
   }
   .family-modal__thoughts {
-    max-height: 220px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    max-height: none;
+    overflow: visible;
     flex-grow: 1;
   }
   .family-modal__desc {
