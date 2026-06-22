@@ -475,9 +475,11 @@
       );
     }
 
-    // Carousel slides entrance (animating the memory-card inside slides to avoid conflict with carousel.js)
-    const cards = section.querySelectorAll('.memory-card');
-    gsap.from(cards, {
+    // Carousel slides entrance (animating only original cards to prevent clone delay)
+    const originalCards = section.querySelectorAll('.carousel__slide:not(.carousel__slide--clone) .memory-card');
+    const cloneCards = section.querySelectorAll('.carousel__slide--clone .memory-card');
+
+    gsap.from(originalCards, {
       scrollTrigger: {
         trigger: section.querySelector('.carousel'),
         start: 'top 80%',
@@ -486,9 +488,22 @@
       y: 40,
       opacity: 0,
       scale: 0.85,
-      duration: 1,
+      duration: 0.8,
       ease: 'power3.out',
-      stagger: 0.08,
+      stagger: 0.04,
+    });
+
+    gsap.from(cloneCards, {
+      scrollTrigger: {
+        trigger: section.querySelector('.carousel'),
+        start: 'top 80%',
+        toggleActions: 'play none none reverse',
+      },
+      y: 0,
+      opacity: 0,
+      scale: 1,
+      duration: 0.5,
+      ease: 'power3.out',
     });
   }
 
@@ -511,9 +526,11 @@
       );
     }
 
-    // Carousel slides entrance (animating the family-card inside slides to avoid conflict with carousel.js)
-    const cards = section.querySelectorAll('.family-card');
-    gsap.from(cards, {
+    // Carousel slides entrance (animating only original cards to prevent clone delay)
+    const originalCards = section.querySelectorAll('.carousel__slide:not(.carousel__slide--clone) .family-card');
+    const cloneCards = section.querySelectorAll('.carousel__slide--clone .family-card');
+
+    gsap.from(originalCards, {
       scrollTrigger: {
         trigger: section.querySelector('.carousel'),
         start: 'top 80%',
@@ -522,9 +539,22 @@
       y: 40,
       opacity: 0,
       scale: 0.85,
-      duration: 1,
+      duration: 0.8,
       ease: 'power3.out',
-      stagger: 0.08,
+      stagger: 0.03,
+    });
+
+    gsap.from(cloneCards, {
+      scrollTrigger: {
+        trigger: section.querySelector('.carousel'),
+        start: 'top 80%',
+        toggleActions: 'play none none reverse',
+      },
+      y: 0,
+      opacity: 0,
+      scale: 1,
+      duration: 0.5,
+      ease: 'power3.out',
     });
   }
 
