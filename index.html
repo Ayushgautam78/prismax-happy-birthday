@@ -1135,7 +1135,7 @@
               <g class="cake-layer cake-top"><rect x="80" y="100" width="240" height="60" rx="20" fill="#FF8FAB"/><rect x="80" y="100" width="240" height="25" rx="20" fill="#FFCCD5"/></g>
               <g class="cake-layer cake-middle"><rect x="50" y="160" width="300" height="65" rx="20" fill="#FFE135"/><rect x="50" y="160" width="300" height="25" rx="20" fill="#FFF176"/></g>
               <g class="cake-layer cake-bottom"><rect x="20" y="225" width="360" height="75" rx="22" fill="#5DD39E"/><rect x="20" y="225" width="360" height="28" rx="22" fill="#7EDBB3"/></g>
-              <text x="200" y="270" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="22" fill="white" stroke="#4A3728" stroke-width="0.5">Happy Birthday!</text>
+              <text x="200" y="270" text-anchor="middle" font-family="'Outfit', sans-serif" font-weight="900" font-size="22" fill="white" stroke="#4A3728" stroke-width="0.5" style="font-weight: 900;">Happy Birthday!</text>
             </g>
 
             <!-- RIGHT HALF -->
@@ -1150,7 +1150,7 @@
               <g class="cake-layer cake-top"><rect x="80" y="100" width="240" height="60" rx="20" fill="#FF8FAB"/><rect x="80" y="100" width="240" height="25" rx="20" fill="#FFCCD5"/></g>
               <g class="cake-layer cake-middle"><rect x="50" y="160" width="300" height="65" rx="20" fill="#FFE135"/><rect x="50" y="160" width="300" height="25" rx="20" fill="#FFF176"/></g>
               <g class="cake-layer cake-bottom"><rect x="20" y="225" width="360" height="75" rx="22" fill="#5DD39E"/><rect x="20" y="225" width="360" height="28" rx="22" fill="#7EDBB3"/></g>
-              <text x="200" y="270" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="22" fill="white" stroke="#4A3728" stroke-width="0.5">Happy Birthday!</text>
+              <text x="200" y="270" text-anchor="middle" font-family="'Outfit', sans-serif" font-weight="900" font-size="22" fill="white" stroke="#4A3728" stroke-width="0.5" style="font-weight: 900;">Happy Birthday!</text>
             </g>
 
             <!-- Cut Line -->
@@ -1163,13 +1163,19 @@
           </svg>
         </div>
 
-        <!-- Cut Cake Button -->
-        <button id="cut-cake-btn" class="finale__btn" data-animate="fade-up">
-          <span class="finale__btn-icon">🎂</span>
-          <span class="finale__btn-text">Cut the Birthday Cake</span>
-          <span class="finale__btn-sparkle">✨</span>
-        </button>
-      </div>
+        <!-- Cut Cake Actions -->
+        <div class="finale__actions" style="display: flex; flex-direction: column; align-items: center; gap: var(--sp-md); position: relative; z-index: var(--z-card);">
+          <button id="cut-cake-btn" class="finale__btn" data-animate="fade-up">
+            <span class="finale__btn-icon">🎂</span>
+            <span class="finale__btn-text">Cut the Birthday Cake</span>
+            <span class="finale__btn-sparkle">✨</span>
+          </button>
+          <button id="reset-cake-btn" class="finale__btn" style="display: none; background: var(--color-accent); color: var(--color-onSecondary); opacity: 0; scale: 0;">
+            <span class="finale__btn-icon">🔄</span>
+            <span class="finale__btn-text">Reset Cake</span>
+            <span class="finale__btn-sparkle">✨</span>
+          </button>
+        </div>
 
       <!-- Confetti Container -->
       <div id="confetti-container" class="confetti-container"></div>

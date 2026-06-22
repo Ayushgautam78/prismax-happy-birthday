@@ -395,8 +395,116 @@
       delay: 0.5,
     });
 
+    // Animate reset button into view
+    const resetBtn = document.getElementById('reset-cake-btn');
+    if (resetBtn) {
+      resetBtn.style.display = 'inline-flex';
+      gsap.to(resetBtn, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'elastic.out(1, 0.5)',
+        delay: 0.5,
+      });
+    }
+
     if (window.PrismaXSounds) {
       window.PrismaXSounds.play('sparkle');
+    }
+  }
+
+  // ═══════════════════════════════════════════
+  // RESET CAKE
+  // ═══════════════════════════════════════════
+  function resetCake() {
+    const btn = document.getElementById('cut-cake-btn');
+    const resetBtn = document.getElementById('reset-cake-btn');
+    const knife = document.getElementById('cake-knife');
+    const cutLine = document.getElementById('cake-cut-line');
+    const leftHalf = document.querySelector('.cake-half-left');
+    const rightHalf = document.querySelector('.cake-half-right');
+    const farewell = document.getElementById('finale-message');
+
+    if (!btn || !resetBtn || !leftHalf || !rightHalf) return;
+
+    // Reset state
+    state.cakeCut = false;
+
+    // Reset cake halves back to center
+    gsap.to(leftHalf, {
+      x: 0,
+      rotation: 0,
+      duration: 0.8,
+      ease: 'power3.inOut',
+    });
+
+    gsap.to(rightHalf, {
+      x: 0,
+      rotation: 0,
+      duration: 0.8,
+      ease: 'power3.inOut',
+    });
+
+    // Reset knife and cut line position/opacity
+    if (knife) {
+      gsap.set(knife, {
+        opacity: 0,
+        y: -80,
+      });
+    }
+
+    if (cutLine) {
+      gsap.set(cutLine, {
+        opacity: 0,
+      });
+    }
+
+    // Hide farewell message
+    if (farewell) {
+      gsap.to(farewell, {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        ease: 'power2.in',
+        onComplete: () => {
+          farewell.style.display = 'none';
+          // reset opacity for next time
+          gsap.set(farewell, { opacity: 1, y: 0 });
+        }
+      });
+    }
+
+    // Hide reset button
+    gsap.to(resetBtn, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.4,
+      ease: 'power2.in',
+      onComplete: () => {
+        resetBtn.style.display = 'none';
+      }
+    });
+
+    // Show the "Cut the Birthday Cake" button again
+    btn.style.display = 'inline-flex';
+    gsap.to(btn, {
+      scale: 1,
+      opacity: 1,
+      duration: 0.6,
+      ease: 'elastic.out(1, 0.5)',
+      delay: 0.2
+    });
+
+    // Play sparkle sound
+    if (window.PrismaXSounds) {
+      window.PrismaXSounds.play('sparkle');
+    }
+  }
+
+  function initResetButton() {
+    const resetBtn = document.getElementById('reset-cake-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', resetCake);
     }
   }
 
@@ -425,6 +533,7 @@
       state.initialized = true;
 
       initCakeCutting();
+      initResetButton();
       initModalClose();
     }
   };
