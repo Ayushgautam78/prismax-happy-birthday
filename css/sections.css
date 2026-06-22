@@ -848,7 +848,9 @@
    ═══════════════════════════════════════════════════════════ */
 .learned {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  overflow: visible;
 }
 
 .learned .container {
@@ -863,6 +865,16 @@
   grid-auto-rows: 1fr;
   gap: var(--sp-lg);
   width: 100%;
+}
+
+.carousel__slide .learned__card {
+  width: 100%;
+  min-height: 250px;
+  cursor: grab;
+}
+
+.carousel__slide .learned__card:active {
+  cursor: grabbing;
 }
 
 .learned__card {

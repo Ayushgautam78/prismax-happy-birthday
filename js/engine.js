@@ -414,19 +414,35 @@
       );
     }
 
-    // Cards stagger
-    const cards = section.querySelectorAll('.learned__card');
-    gsap.from(cards, {
+    // Carousel slides entrance (animating only original cards to prevent clone delay)
+    const originalCards = section.querySelectorAll('.carousel__slide:not(.carousel__slide--clone) .learned__card');
+    const cloneCards = section.querySelectorAll('.carousel__slide--clone .learned__card');
+
+    gsap.from(originalCards, {
       scrollTrigger: {
-        trigger: section.querySelector('.learned__grid'),
+        trigger: section.querySelector('.carousel'),
         start: 'top 80%',
+        toggleActions: 'play none none reverse',
       },
-      y: 50,
+      y: 40,
       opacity: 0,
-      scale: 0.9,
+      scale: 0.85,
       duration: 0.8,
       ease: 'power3.out',
-      stagger: 0.06,
+      stagger: 0.04,
+    });
+
+    gsap.from(cloneCards, {
+      scrollTrigger: {
+        trigger: section.querySelector('.carousel'),
+        start: 'top 80%',
+        toggleActions: 'play none none reverse',
+      },
+      y: 0,
+      opacity: 0,
+      scale: 1,
+      duration: 0.5,
+      ease: 'power3.out',
     });
 
     // 3D Tilt on hover
