@@ -976,11 +976,11 @@
   border-radius: var(--radius-md);
   border: var(--border-thick);
   box-shadow: var(--shadow-solid);
-  padding: var(--sp-xl);
+  padding: var(--sp-lg) var(--sp-md); /* Reduced padding to fit card content within 4:5 aspect ratio */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-sm);
+  gap: var(--sp-xs); /* Smaller gap for content layout consistency */
   text-align: center;
   aspect-ratio: 4 / 5;
   width: 100%;
@@ -1012,14 +1012,14 @@
 
 .memory-card__text {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.5; /* Slightly tighter line height to save height space */
   color: var(--color-onPrimary);
   opacity: 0.85;
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--sp-sm);
+  margin-bottom: var(--sp-xs);
 }
 
 .memory-card__more {
@@ -1047,16 +1047,20 @@
   background: var(--color-primary);
   border: var(--border-thick);
   box-shadow: 12px 12px 0 var(--color-onPrimary) !important;
-  max-width: 800px;
-  padding: var(--sp-xl) !important;
+  width: fit-content;
+  max-width: 90vw;
+  padding: var(--sp-md) !important;
   transform: scale(0.85);
-  transition: 
-    0.5s transform var(--ease-out-elastic-strong), 
-    0.5s opacity var(--ease-out-quart);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .memories-modal__image-container {
-  width: 100%;
+  position: relative;
+  width: min(calc(90vw - 32px), calc((80vh - 50px) * 4 / 5));
+  max-width: 480px; /* Slightly reduced to perfectly fit the viewport and avoid vertical scrolls */
+  aspect-ratio: 4 / 5; /* Keep image container 4:5 aspect ratio strictly! */
   border: var(--border-thick);
   border-radius: var(--radius-sm);
   overflow: hidden;
@@ -1067,22 +1071,36 @@
   align-items: center;
 }
 
+.memories-modal__spinner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--color-accent);
+  border-radius: 50%;
+  animation: modalSpin 1s linear infinite;
+  z-index: 1;
+}
+
+@keyframes modalSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .memories-modal__img {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* Since image ratio is 4:5, cover is clean and matches container perfectly */
   display: block;
-  object-fit: contain;
-  max-height: 80vh;
+  opacity: 0;
+  will-change: opacity;
 }
 
 @media (max-width: 850px) {
   .memories-modal__content {
-    max-width: 90%;
-    padding: var(--sp-md) !important;
     box-shadow: 8px 8px 0 var(--color-onPrimary) !important;
-  }
-  .memories-modal__img {
-    max-height: 70vh;
   }
 }
 
@@ -1829,9 +1847,6 @@
   max-width: 500px;
   padding: var(--sp-2xl) var(--sp-xl) !important;
   transform: scale(0.85);
-  transition: 
-    0.5s transform var(--ease-out-elastic-strong), 
-    0.5s opacity var(--ease-out-quart);
 }
 
 .family-modal__header {

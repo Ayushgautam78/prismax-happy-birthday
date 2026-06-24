@@ -512,16 +512,20 @@
   // INIT MODAL CLOSE
   // ═══════════════════════════════════════════
   function initModalClose() {
-    const closeBtn = document.getElementById('modal-close');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', hideVideoModal);
-    }
+    const modal = document.getElementById('video-modal');
+    if (!modal) return;
 
     // Close on backdrop click
-    const backdrop = document.querySelector('.modal__backdrop');
+    const backdrop = modal.querySelector('.modal__backdrop');
     if (backdrop) {
       backdrop.addEventListener('click', hideVideoModal);
     }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target.closest('.modal__close') || !e.target.closest('.modal__content')) {
+        hideVideoModal();
+      }
+    });
   }
 
   // ═══════════════════════════════════════════

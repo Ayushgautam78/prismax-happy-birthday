@@ -1234,7 +1234,6 @@
     const modal = document.getElementById('family-modal');
     if (!modal) return;
 
-    const closeBtn = document.getElementById('family-modal-close');
     const backdrop = modal.querySelector('.modal__backdrop');
 
     const modalImg = document.getElementById('family-modal-img');
@@ -1302,18 +1301,23 @@
       }
     }
 
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target.closest('.modal__close') || !e.target.closest('.family-modal__content')) {
+        closeModal();
+      }
+    });
   }
 
   function initMemoriesModal() {
     const modal = document.getElementById('memories-modal');
     if (!modal) return;
 
-    const closeBtn = document.getElementById('memories-modal-close');
     const backdrop = modal.querySelector('.modal__backdrop');
 
     const modalImg = document.getElementById('memories-modal-img');
+    const spinner = document.getElementById('memories-modal-spinner');
     const modalContent = modal.querySelector('.memories-modal__content');
 
     // Use event delegation to handle clicks on original and cloned memory cards
@@ -1326,8 +1330,14 @@
 
       const dateText = card.querySelector('.memory-card__date')?.textContent || '';
 
-      // Populate modal data
+      // Reset loader spinner and image opacity
+      if (spinner) spinner.style.display = 'block';
       if (modalImg) {
+        modalImg.style.opacity = '0';
+        modalImg.onload = () => {
+          if (spinner) spinner.style.display = 'none';
+          gsap.to(modalImg, { opacity: 1, duration: 0.3, overwrite: 'auto' });
+        };
         modalImg.src = imageSrc;
         modalImg.alt = dateText;
       }
@@ -1364,18 +1374,35 @@
           ease: 'power2.in',
           onComplete: () => {
             modal.classList.remove('active');
+            if (modalImg) {
+              modalImg.src = '';
+              modalImg.onload = null;
+              modalImg.style.opacity = '0';
+            }
+            if (spinner) spinner.style.display = 'none';
             // Resume Lenis smooth scroll
             if (lenis) lenis.start();
           }
         });
       } else {
         modal.classList.remove('active');
+        if (modalImg) {
+          modalImg.src = '';
+          modalImg.onload = null;
+          modalImg.style.opacity = '0';
+        }
+        if (spinner) spinner.style.display = 'none';
         if (lenis) lenis.start();
       }
     }
 
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target.closest('.modal__close') || !e.target.closest('.memories-modal__image-container')) {
+        closeModal();
+      }
+    });
   }
 
   function updateAndAnimateStat(el, rawValue) {
@@ -1424,7 +1451,6 @@
 
     const customizeBtn = document.getElementById('about-customize-btn');
     const resetBtn = document.getElementById('about-reset-btn');
-    const closeBtn = document.getElementById('customize-modal-close');
     const backdrop = modal.querySelector('.modal__backdrop');
     const form = document.getElementById('customize-form');
     const modalContent = modal.querySelector('.customize-modal__content');
@@ -1599,8 +1625,13 @@
       }
     }
 
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target.closest('.modal__close') || !e.target.closest('.customize-modal__content')) {
+        closeModal();
+      }
+    });
 
     // ── Form submit → apply + save ──
     if (form) {
