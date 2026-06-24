@@ -1306,6 +1306,78 @@
     if (backdrop) backdrop.addEventListener('click', closeModal);
   }
 
+  function initMemoriesModal() {
+    const modal = document.getElementById('memories-modal');
+    if (!modal) return;
+
+    const closeBtn = document.getElementById('memories-modal-close');
+    const backdrop = modal.querySelector('.modal__backdrop');
+
+    const modalImg = document.getElementById('memories-modal-img');
+    const modalContent = modal.querySelector('.memories-modal__content');
+
+    // Use event delegation to handle clicks on original and cloned memory cards
+    document.addEventListener('click', (e) => {
+      const card = e.target.closest('.memory-card');
+      if (!card) return;
+
+      const imageSrc = card.dataset.memoryImage || '';
+      if (!imageSrc) return;
+
+      const dateText = card.querySelector('.memory-card__date')?.textContent || '';
+
+      // Populate modal data
+      if (modalImg) {
+        modalImg.src = imageSrc;
+        modalImg.alt = dateText;
+      }
+
+      // Stop Lenis smooth scroll while modal is active
+      if (lenis) lenis.stop();
+
+      // Open modal
+      modal.classList.add('active');
+
+      // Play click sound
+      if (window.PrismaXSounds) window.PrismaXSounds.play('click');
+
+      // Spring scale in animation
+      if (modalContent) {
+        gsap.killTweensOf(modalContent);
+        gsap.fromTo(modalContent, 
+          { scale: 0.8, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.6, ease: 'springElastic' }
+        );
+      }
+    });
+
+    function closeModal() {
+      // Play click sound
+      if (window.PrismaXSounds) window.PrismaXSounds.play('click');
+
+      if (modalContent) {
+        gsap.killTweensOf(modalContent);
+        gsap.to(modalContent, {
+          scale: 0.85,
+          opacity: 0,
+          duration: 0.3,
+          ease: 'power2.in',
+          onComplete: () => {
+            modal.classList.remove('active');
+            // Resume Lenis smooth scroll
+            if (lenis) lenis.start();
+          }
+        });
+      } else {
+        modal.classList.remove('active');
+        if (lenis) lenis.start();
+      }
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+  }
+
   function updateAndAnimateStat(el, rawValue) {
     const value = rawValue.trim();
     const match = value.match(/^(\d+)(.*)$/);
@@ -1645,6 +1717,7 @@
       initNavScroll();
       initScrollIndicatorHide();
       initFamilyModal();
+      initMemoriesModal();
       initAboutCardCustomizer();
     },
 
