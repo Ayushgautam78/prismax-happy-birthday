@@ -1483,12 +1483,13 @@
   height: 36px;
   border-radius: 50%;
   background: var(--color-primary);
-  border: var(--border-thin);
+  border: var(--border-thick); /* Use thick border for design consistency */
   display: grid;
   place-items: center;
   font-size: 1rem;
-  z-index: 1;
+  z-index: 10; /* Stack above memories img (z-index 2) */
   transition: 0.3s scale var(--ease-out-elastic);
+  box-shadow: 2px 2px 0 var(--color-onPrimary); /* Match design system shadows */
 }
 
 .modal__close:hover { scale: 1.1; }
